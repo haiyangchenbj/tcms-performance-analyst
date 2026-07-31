@@ -1,9 +1,8 @@
 ---
 name: tcms-performance-analyst
+version: "1.1.0"
 description: |
-  For tech-product marketing teams — monthly analysis of published output, content-calendar variance, channel performance, product-line coverage, and knowledge-base health, with next-month recommendations.
-  Never fabricates metrics (marks gaps DATA_MISSING) or auto-modifies the calendar or triggers writing.
-  Not for single-article pre-publish review — use tcms-compliance-reviewer for that.
+  Monthly content performance and output-analysis skill. Aggregates published content, the content calendar, channel-effect data, product-line coverage, and knowledge-base health; outputs a monthly report and next-cycle optimization suggestions. Does not auto-modify the schedule or trigger writing.
 read_when:
   - 月度报告
   - 效果分析
@@ -14,26 +13,25 @@ read_when:
   - monthly report
   - content review
   - performance analysis
-version: 1.0.1
 disable: false
 ---
 
-# TCMS Performance Analyst
+# Content Performance Analyst
 
-对项目级内容产出做月度分析，输出结构化报告和优化建议。
+Runs a monthly analysis of project-level content output and produces a structured report with optimization suggestions.
 
 ## When to use
 
-- 需要统计上一个自然月的内容产出、产品线覆盖和类型分布。
-- 需要将排期计划与实际情况做对比。
-- 需要基于已有效果数据输出观察。
-- 需要为下月提供选题和知识库调整建议。
+- Need to tally last calendar month's content output, product-line coverage, and type distribution.
+- Need to compare the planned schedule against actual output.
+- Need observations based on available effect data.
+- Need topic and knowledge-base adjustment suggestions for next month.
 
 ## Do not use
 
-- 单篇文章预审，由 `content-compliance-reviewer` 处理。
-- 自动修改内容日历、发布内容或产品优先级。
-- 在效果数据缺失时编造数字。
+- Single-article pre-review — handled by `content-compliance-reviewer`.
+- Auto-modifying the content calendar, published content, or product priority.
+- Fabricating numbers when effect data is missing.
 
 ## Input
 
@@ -49,29 +47,29 @@ performance_profile:
 analysis_month: YYYY-MM
 ```
 
-效果数据缺失时只分析可观测维度。
+When effect data is missing, analyze only observable dimensions.
 
 ## Workflow
 
 ### Step 1: [Deterministic] Confirm scope
 
-默认分析上一个自然月。确认日历、已发布目录和效果数据。
+Analyze the previous calendar month by default. Confirm the calendar, published directory, and effect data.
 
 ### Step 2: [Deterministic] Collect data
 
-1. 扫描已发布内容目录，提取标题、日期、产品、类型、渠道。
-2. 读取排期表，对比计划与实际产出。
-3. 如有渠道效果数据，提取阅读、收藏、转发和完读指标。
-4. 检查知识库最近更新和积压。
+1. Scan the published-content directory; extract title, date, product, type, channel.
+2. Read the schedule; compare plan vs actual output.
+3. If channel-effect data exists, extract reads, saves, forwards, and read-completion metrics.
+4. Check the knowledge base for recent updates and backlog.
 
 ### Step 3: [LLM] Analyze
 
-- 产出完成度：计划 vs 实际。
-- 产品线覆盖：各产品的篇数和类型。
-- 产品优先级匹配度。
-- 内容类型分布。
-- 效果数据边界（缺失时标注 `DATA_MISSING`）。
-- 知识库健康度。
+- Output completion: plan vs actual.
+- Product-line coverage: article count and type per product.
+- Product-priority alignment.
+- Content-type distribution.
+- Effect-data boundaries (mark `DATA_MISSING` when missing).
+- Knowledge-base health.
 
 ### Step 4: [LLM] Produce monthly report
 
@@ -120,7 +118,7 @@ Mark missing data as DATA_MISSING.
 
 ### Step 5: [Deterministic] Save
 
-保存到：`reports/YYYY-MM-monthly-report.md`
+Save to: `reports/YYYY-MM-monthly-report.md`
 
 ## Hard Rules
 
@@ -154,3 +152,9 @@ reports/YYYY-MM-monthly-report.md
 - [ ] Every performance figure has an observable source or is marked DATA_MISSING.
 - [ ] Recommendations reference concrete gaps.
 - [ ] Report does not trigger downstream tasks.
+
+---
+
+## 中文摘要
+
+Content Performance Analyst 做项目级内容的月度分析，输出结构化报告与下月优化建议。统计产出完成度、产品线覆盖、类型分布与效果数据（缺失标 DATA_MISSING），对比排期与实际，检查知识库健康度。硬性规则：不编造数据、不改排期、产品线分析用私有映射而非标题推断、每条发现须有日期/文件/数据点支撑。
