@@ -1,6 +1,6 @@
 ---
 name: tcms-performance-analyst
-version: "1.1.0"
+version: "1.1.1"
 description: |
   Monthly content performance and output-analysis skill. Aggregates published content, the content calendar, channel-effect data, product-line coverage, and knowledge-base health; outputs a monthly report and next-cycle optimization suggestions. Does not auto-modify the schedule or trigger writing.
 read_when:
@@ -13,6 +13,16 @@ read_when:
   - monthly report
   - content review
   - performance analysis
+metadata:
+  openclaw:
+    tags:
+      - content-marketing
+      - analytics
+      - performance-analysis
+      - monthly-report
+      - data-review
+      - tech-product
+      - b2b
 disable: false
 ---
 
