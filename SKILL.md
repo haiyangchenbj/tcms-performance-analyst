@@ -1,8 +1,17 @@
 ---
+slug: tcms-performance-analyst
+displayName: Tcms Performance Analyst
 name: tcms-performance-analyst
-version: "1.1.1"
+version: "1.1.5"
+not_for:
+  - Real-time or per-article analytics (monthly aggregation focus)
+  - Modifying the content calendar or triggering writing (advisory output only)
+  - Channel-side operations like scheduling or boosting
+  - A/B testing design or execution
 description: |
   Monthly content performance and output-analysis skill. Aggregates published content, the content calendar, channel-effect data, product-line coverage, and knowledge-base health; outputs a monthly report and next-cycle optimization suggestions. Does not auto-modify the schedule or trigger writing.
+description_zh: "月度内容绩效分析器：聚合已发内容、内容日历、渠道效果、产品线覆盖与知识库健康度，输出月报与下周期优化建议，不自动改排期或触发写作。"
+
 read_when:
   - 月度报告
   - 效果分析
