@@ -2,7 +2,7 @@
 slug: tcms-performance-analyst
 displayName: Tcms Performance Analyst
 name: tcms-performance-analyst
-version: "1.1.5"
+version: "1.1.6"
 not_for:
   - Real-time or per-article analytics (monthly aggregation focus)
   - Modifying the content calendar or triggering writing (advisory output only)
