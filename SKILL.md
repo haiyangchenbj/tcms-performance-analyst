@@ -2,7 +2,7 @@
 slug: tcms-performance-analyst
 displayName: Tcms Performance Analyst
 name: tcms-performance-analyst
-version: "1.1.7"""
+version: "1.1.8"
 not_for:
   - Real-time or per-article analytics (monthly aggregation focus)
   - Modifying the content calendar or triggering writing (advisory output only)
@@ -145,9 +145,9 @@ Save to: `reports/YYYY-MM-monthly-report.md`
 2. Never modify the content calendar or trigger downstream writing.
 3. Product-line analysis uses the private product map, not inference from titles.
 4. Vendor- or platform-reported metrics must carry a "reported by {party}, not independently verified" caveat; a bare number is a fail.
-4. Dataset gaps must be reported with the observed scope and data boundary.
-5. Human confirmation required before the plan team acts on recommendations.
-6. Every finding must reference a date, file or data point.
+5. Dataset gaps must be reported with the observed scope and data boundary.
+6. Human confirmation required before the plan team acts on recommendations.
+7. Every finding must reference a date, file or data point.
 
 ## Failure Handling
 
