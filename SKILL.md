@@ -2,7 +2,7 @@
 slug: tcms-performance-analyst
 displayName: Tcms Performance Analyst
 name: tcms-performance-analyst
-version: "1.1.8"
+version: "1.1.9"
 not_for:
   - Real-time or per-article analytics (monthly aggregation focus)
   - Modifying the content calendar or triggering writing (advisory output only)
@@ -157,7 +157,7 @@ Save to: `reports/YYYY-MM-monthly-report.md`
 | Published directory empty | Output zero-production report |
 | Channel data missing | Analyze only output dimensions |
 | Knowledge-base not found | Skip the health section |
-| Product map missing | Use title-based inference with a boundary note |
+| Product map missing | Stop product-line coverage analysis and mark PRODUCT_MAP_MISSING — title-based inference is forbidden by Hard Rule 3; still report output/type counts that need no product mapping |
 
 ## Output Format
 
